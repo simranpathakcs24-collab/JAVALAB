@@ -1,29 +1,16 @@
-## Backend — local setup
+# React + Vite
 
-This backend requires a MongoDB connection string in an `.env` file.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Steps to get running locally:
+Currently, two official plugins are available:
 
-1. Copy the example `.env.example` to `.env` inside the `backend/` folder.
-2. Fill in the values (for example `MONGO_URI`, `JWT_SECRET`, `FRONTEND_URL`, and `PORT`).
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Example `.env` lines:
+## React Compiler
 
-```
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/events-dev
-JWT_SECRET=some-secure-random-string
-FRONTEND_URL=http://localhost:3000
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-3. Install dependencies and run:
+## Expanding the ESLint configuration
 
-```powershell
-cd backend
-npm install
-npm run dev
-```
-
-If `MONGO_URI` is not set the server will print a clear error and exit — see `config/db.js` for the validation.
-
-Security: Do not commit your `.env` file — it's already included in `.gitignore`.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
